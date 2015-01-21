@@ -21,7 +21,7 @@ let collection = [{a: 1}, {a: 2}, {a: 3}];
 class MyClass {
     constructor() {
         this.events = new BehaveEvents();
-        this.events.reponse('privateCollection', () => {
+        this.events.response('privateCollection', () => {
             return collection;
         });
     }
