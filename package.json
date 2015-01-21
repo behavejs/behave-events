@@ -1,7 +1,7 @@
 {
   "name": "behave-events",
   "version": "0.1.0",
-  "description": "",
+  "description": "An extended EventEmitter class with advanced event support (transactions, commands, and requests) ",
   "main": "dist/index.js",
   "scripts": {
     "test": "grunt test"
@@ -12,7 +12,12 @@
   },
   "keywords": [
     "behave",
-    "behavejs"
+    "behavejs",
+    "events",
+    "reqres",
+    "command",
+    "execute",
+    "transactions"
   ],
   "author": "kurtiskemple@gmail.com",
   "license": "GPL",
