@@ -1,5 +1,5 @@
 import EventEmitter from 'events';
-import {defer} from 'Q';
+import {defer} from 'q';
 
 class BehaveEvents extends EventEmitter {
     constructor() {
