@@ -85,7 +85,7 @@ billing.transact('payment', {
     amount: '100.00',
     memo: '$$$$'
 })
-.then(function(receipt) {
+.then(receipt => {
     logger.execute('logAsync', {
         type: 'payment',
         user: receipt.user,
@@ -94,7 +94,7 @@ billing.transact('payment', {
         memo: receipt.memo
     });
 })
-.fail(function(err) {
+.fail(err => {
     alert('AAAAGGGHHHH! No monies!! $$$$');
 });
 
@@ -105,3 +105,4 @@ billing.transact('payment', {
 Release History:
 
 - 0.1.0 Initial Release
+- 0.2.0 Cleaned up examples in readme
