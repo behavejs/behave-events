@@ -48,7 +48,7 @@ var _interopRequire = function (obj) {
 
 var EventEmitter = _interopRequire(require("events"));
 
-var defer = require("Q").defer;
+var defer = require("q").defer;
 var BehaveEvents = (function (EventEmitter) {
   function BehaveEvents() {
     _get(Object.getPrototypeOf(BehaveEvents.prototype), "constructor", this).apply(this, arguments);
