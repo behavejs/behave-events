@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['test']);
-    grunt.registerTask('dev', ['browserify:dev']);
-    grunt.registerTask('test', ['clean:test', 'jshint', 'browserify:spec', 'jasmine']);
-    grunt.registerTask('build', ['clean:dist', 'jshint', '6to5']);
+    grunt.registerTask('dev', ['build', 'browserify:dev']);
+    grunt.registerTask('test', ['clean:test', 'jshint', '6to5:spec', 'browserify:spec', 'jasmine']);
+    grunt.registerTask('build', ['clean:dist', 'jshint', '6to5:src']);
 };

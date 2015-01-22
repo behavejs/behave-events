@@ -105,4 +105,5 @@ billing.transact('payment', {
 Release History:
 
 - 0.1.0 Initial Release
-- 0.2.0 Cleaned up examples in readme
+- 0.1.1 Cleaned up examples in readme
+- 0.1.2 Converted tests to ES6

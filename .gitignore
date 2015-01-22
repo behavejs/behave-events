@@ -2,5 +2,6 @@ node_modules
 .grunt
 _SpecRunner.html
 test/build
+test/common
 src/dev.js
 dev

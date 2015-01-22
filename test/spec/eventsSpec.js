@@ -1,19 +1,19 @@
-var BehaveEvents = require('../../dist/index');
+import BehaveEvents from '../../dist/index';
 
-describe('BehaveEvents', function() {
-    beforeEach(function() {
+describe('BehaveEvents', () => {
+    beforeEach(() => {
         this.events = new BehaveEvents();
     });
 
-    describe('.transaction()', function() {
+    describe('.transaction()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.transaction).toBeDefined();
             done();
         });
 
-        it('should register a transaction', function(done) {
-            var cb = function() {};
+        it('should register a transaction', (done) => {
+            var cb = () => {};
             this.events.transaction('test', cb);
             expect(this.events.__transactions.test).toBeDefined();
             expect(this.events.__transactions.test).toEqual(cb);
@@ -21,14 +21,14 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.transact()', function() {
+    describe('.transact()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.transact).toBeDefined();
             done();
         });
 
-        it('should call a registered transaction', function(done) {
+        it('should call a registered transaction', (done) => {
             var spy = jasmine.createSpy('transaction');
             this.events.transaction('test', spy);
             this.events.transact('test');
@@ -36,7 +36,7 @@ describe('BehaveEvents', function() {
             done();
         });
 
-        it('should return a promise', function(done) {
+        it('should return a promise', (done) => {
             var spy = jasmine.createSpy('transaction');
             this.events.transaction('test', spy);
             var promise = this.events.transact('test');
@@ -47,15 +47,15 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.stopTransacting()', function() {
+    describe('.stopTransacting()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.stopTransacting).toBeDefined();
             done();
         });
 
-        it('should remove a registered transaction', function(done) {
-            this.events.transaction('test', function() {});
+        it('should remove a registered transaction', (done) => {
+            this.events.transaction('test', () => {});
             expect(this.events.__transactions.test).toBeDefined();
 
             this.events.stopTransacting('test');
@@ -64,15 +64,15 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.response()', function() {
+    describe('.response()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.response).toBeDefined();
             done();
         });
 
-        it('should register a response', function(done) {
-            var cb = function() {};
+        it('should register a response', (done) => {
+            var cb = () => {};
             this.events.response('test', cb);
             expect(this.events.__responses.test).toBeDefined();
             expect(this.events.__responses.test).toEqual(cb);
@@ -80,14 +80,14 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.request()', function() {
+    describe('.request()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.transact).toBeDefined();
             done();
         });
 
-        it('should call a registered response', function(done) {
+        it('should call a registered response', (done) => {
             var spy = jasmine.createSpy('transaction');
             this.events.response('test', spy);
             this.events.request('test');
@@ -95,8 +95,8 @@ describe('BehaveEvents', function() {
             done();
         });
 
-        it('should return a value from response', function(done) {
-            var cb = function() { return 'test'; };
+        it('should return a value from response', (done) => {
+            var cb = () => { return 'test'; };
             this.events.response('test', cb);
             var ret = this.events.request('test');
             expect(ret).toEqual('test');
@@ -104,15 +104,15 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.stopResponding()', function() {
+    describe('.stopResponding()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.stopResponding).toBeDefined();
             done();
         });
 
-        it('should remove a registered response', function(done) {
-            this.events.response('test', function() {});
+        it('should remove a registered response', (done) => {
+            this.events.response('test', () => {});
             expect(this.events.__responses.test).toBeDefined();
 
             this.events.stopResponding('test');
@@ -121,15 +121,15 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.command()', function() {
+    describe('.command()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.command).toBeDefined();
             done();
         });
 
-        it('should register a command', function(done) {
-            var cb = function() {};
+        it('should register a command', (done) => {
+            var cb = () => {};
             this.events.command('test', cb);
             expect(this.events.__commands.test).toBeDefined();
             expect(this.events.__commands.test).toEqual(cb);
@@ -137,14 +137,14 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.execute()', function() {
+    describe('.execute()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.execute).toBeDefined();
             done();
         });
 
-        it('should call a registered command', function(done) {
+        it('should call a registered command', (done) => {
             var spy = jasmine.createSpy('command');
             this.events.command('test', spy);
             this.events.execute('test');
@@ -153,15 +153,15 @@ describe('BehaveEvents', function() {
         });
     });
 
-    describe('.stopExecuting()', function() {
+    describe('.stopExecuting()', () => {
 
-        it('should be defined', function(done) {
+        it('should be defined', (done) => {
             expect(this.events.stopExecuting).toBeDefined();
             done();
         });
 
-        it('should remove a registered response', function(done) {
-            this.events.command('test', function() {});
+        it('should remove a registered response', (done) => {
+            this.events.command('test', () => {});
             expect(this.events.__commands.test).toBeDefined();
 
             this.events.stopExecuting('test');

@@ -7,7 +7,7 @@ module.exports = {
     },
     spec: {
         files: {
-            'test/build/specs.js': ['test/spec/**/*.js']
+            'test/build/specs.js': ['test/common/*.js']
         }
     },
     dev: {
