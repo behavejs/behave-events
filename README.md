@@ -1,7 +1,7 @@
 # behave-events
 An extended EventEmitter class with advanced event support (transactions, commands, and requests)
 
-### Overview
+[ ![Codeship Status for behavejs/behave-events](https://codeship.com/projects/bf857f30-8346-0132-a1e3-366b1854f7f3/status?branch=master)](https://codeship.com/projects/58100)
 
 `behave-events` is an event module that extends Node's `EventEmitter` class. It adds some common event patterns to the class, making it a fully featured event solution.
 
@@ -107,3 +107,4 @@ Release History:
 - 0.1.0 Initial Release
 - 0.1.1 Cleaned up examples in readme
 - 0.1.2 Converted tests to ES6
+- 0.1.3 Added build badge
